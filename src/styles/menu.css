@@ -1,0 +1,154 @@
+/* O QUE FAZ: define o container da seção de cardápio.
+   ONDE APARECE: bloco #menu (título, subtítulo e lista de produtos).
+   QUANDO ATUA: sempre que a seção é renderizada. */
+#menu {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+/* O QUE FAZ: organiza os cards em grade responsiva.
+   ONDE APARECE: container #dishes.
+   QUANDO ATUA: desktop com 3 colunas (reduz em breakpoints). */
+#dishes {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(220px, 1fr));
+    gap: 18px;
+}
+
+/* O QUE FAZ: estiliza o card individual do produto.
+   ONDE APARECE: cada .dish dentro de #dishes.
+   QUANDO ATUA: em todos os tamanhos de tela. */
+.dish {
+    background-color: #fff;
+    border-radius: 14px;
+    padding: 14px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* O QUE FAZ: cria o selo circular com ícone de favorito.
+   ONDE APARECE: canto superior dos cards.
+   QUANDO ATUA: renderização estática do card. */
+.dish-heart {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #ffcb45;
+    color: #b3261e;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* O QUE FAZ: define tamanho padrão das imagens dos produtos.
+   ONDE APARECE: elemento .dish-image.
+   QUANDO ATUA: sempre, preservando proporção com object-fit. */
+.dish-image {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+}
+
+/* O QUE FAZ: aplica tratamento visual nas imagens dos itens com fundo claro.
+   ONDE APARECE: classe .dish-image-donuts (donuts/bolo/combo no HTML atual).
+   QUANDO ATUA: durante a renderização das imagens do cardápio. */
+.dish-image-donuts {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 10px;
+    mix-blend-mode: normal;
+    filter: brightness(1.28) contrast(0.9);
+}
+
+/* O QUE FAZ: ajuste opcional para usar uma imagem de bolo menor no card.
+   ONDE APARECE: quando a classe .dish-image-cake for aplicada no HTML.
+   QUANDO ATUA: apenas nesse cenário específico. */
+.dish-image-cake {
+    width: 82%;
+    margin: 0 auto;
+    background-color: transparent;
+    mix-blend-mode: multiply;
+}
+
+/* O QUE FAZ: define tipografia do nome do produto.
+   ONDE APARECE: .dish-title.
+   QUANDO ATUA: sempre. */
+.dish-title {
+    font-size: 1.1rem;
+    color: #1d1d1d;
+}
+
+/* O QUE FAZ: padroniza texto descritivo curto do produto.
+   ONDE APARECE: .dish-description.
+   QUANDO ATUA: sempre. */
+.dish-description {
+    color: #434343;
+    font-size: 0.95rem;
+}
+
+/* O QUE FAZ: alinha estrelas de avaliação e contador.
+   ONDE APARECE: .dish-rate.
+   QUANDO ATUA: renderização da área de avaliação. */
+.dish-rate {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: #e9a209;
+}
+
+/* O QUE FAZ: estiliza o total de avaliações ao lado das estrelas.
+   ONDE APARECE: .dish-rate span.
+   QUANDO ATUA: sempre. */
+.dish-rate span {
+    margin-left: 6px;
+    color: #434343;
+    font-size: 0.9rem;
+}
+
+/* O QUE FAZ: organiza preço e botão de ação no rodapé do card.
+   ONDE APARECE: .dish-price.
+   QUANDO ATUA: sempre. */
+.dish-price {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* O QUE FAZ: define dimensão fixa para botões com ícone.
+   ONDE APARECE: botão "adicionar ao carrinho".
+   QUANDO ATUA: em todos os cards do menu. */
+.btn-icon {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border-radius: 10px;
+}
+
+/* O QUE FAZ: reduz a grade para 2 colunas em telas médias.
+   ONDE APARECE: #dishes.
+   QUANDO ATUA: até 992px. */
+@media screen and (max-width: 992px) {
+    #dishes {
+        grid-template-columns: repeat(2, minmax(220px, 1fr));
+    }
+}
+
+/* O QUE FAZ: empilha os cards em 1 coluna em telas pequenas.
+   ONDE APARECE: #dishes.
+   QUANDO ATUA: até 600px. */
+@media screen and (max-width: 600px) {
+    #dishes {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+
+
+
+

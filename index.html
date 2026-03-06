@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--
+      O QUE FAZ: carrega os ícones (menu, telefone e redes sociais).
+      ONDE APARECE: no header, botões e bloco de redes sociais.
+      QUANDO ATUA: durante o carregamento da página.
+    -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--
+      O QUE FAZ: aplica estilos globais (cores base, botão padrão e redes sociais).
+      ONDE APARECE: em toda a página.
+      QUANDO ATUA: assim que o navegador processa o CSS.
+    -->
+    <link rel="stylesheet" href="src/styles/styles.css">
+    <!--
+      O QUE FAZ: disponibiliza jQuery para o script de interação.
+      ONDE APARECE: usado no JavaScript do menu.
+      QUANDO ATUA: antes de executar script.js.
+    -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <!-- O QUE FAZ: define o título exibido na aba do navegador. -->
+    <title>LandPage</title>
+</head>
+<body>
+    <!-- O QUE FAZ: estrutura o cabeçalho com navegação principal. 
+     ONDE APARECE: topo da página. 
+     QUANDO ATUA: renderização inicial e navegação. -->
+    <header>
+        <nav id="navbar">
+            <i class="fa-solid fa-burger" id="nav_logo"> mai's doces</i>
+
+            <ul id="nav_list">
+                <li class="nav-item active">
+                    <a href="#home">Início</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#tipos">Categorias</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#testimonials">Avaliações</a>
+                </li>
+            </ul>
+
+            <a
+                class="btn-default"
+                href="https://wa.me/5511989009114?text=Olá!+Gostaria+de+fazer+um+pedido."
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Pedido aqui
+            </a>
+
+            <button id="mobile_btn" type="button" aria-label="Abrir menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </nav>
+
+        <!-- O QUE FAZ: monta o menu de navegação mobile. ONDE APARECE: abaixo da navbar. QUANDO ATUA: quando #mobile_menu recebe classe .active via JS. -->
+        <div id="mobile_menu">
+            <ul id="mobile_nav_list">
+                <li class="nav-item">
+                    <a href="#home">Início</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#tipos">Categorias</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#testimonials">Avaliações</a>
+                </li>
+            </ul>
+
+            <a
+                class="btn-default"
+                href="https://wa.me/5511989009114?text=Olá!+Gostaria+de+fazer+um+pedido."
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Pedido aqui
+            </a>
+        </div>
+    </header>
+
+    <!-- O QUE FAZ: define o conteúdo principal da home. ONDE APARECE: corpo da landing page. QUANDO ATUA: renderização do main. -->
+    <main id="content">
+        <section id="home">
+            <!-- O QUE FAZ: insere shape decorativa de fundo. ONDE APARECE: lado direito da Home. QUANDO ATUA: junto ao CSS da .shape. -->
+            <div class="shape"></div>
+
+            <!-- O QUE FAZ: agrupa texto principal e ações (CTA). ONDE APARECE: coluna esquerda da Home. QUANDO ATUA: renderização da seção #cta. -->
+            <div id="cta">
+                <h1 class="title">
+                    O sabor que toca em
+                    <span>você</span>
+                </h1>
+
+                <p class="description">
+                    Bolos que encantam, doces que apaixonam.
+                    Transformando ingredientes simples em momentos inesquecíveis.
+                </p>
+
+                <div id="cta_buttons">
+                    <a href="#menu" class="btn-default">
+                        Ver menu
+                    </a>
+                    
+                    <!-- O QUE FAZ: botão de ligação com estilo padrão. 
+                     ONDE APARECE: ao lado de "Ver menu". 
+                     QUANDO ATUA: clique inicia chamada telefônica. -->
+                    <a href="https://wa.me/5511989009114?text=Olá!+Gostaria+de+fazer+um+pedido." 
+                        id="phone_button" 
+                        class="btn-default"
+                        target="_blank"
+                        rel="noopener noreferrer">
+
+                        <i class="fa-solid fa-phone"></i>
+                        (11) 98900-9114
+                    </a>
+
+                </div>
+                <!-- O QUE FAZ: renderiza os botões de redes sociais. 
+                 ONDE APARECE: abaixo dos CTAs. 
+                 QUANDO ATUA: clique abre os links definidos. -->
+                <div class="social-media-buttons">
+                    <a href="https://wa.me/5511989009114?text=Olá!+Gostaria+de+fazer+um+pedido." 
+                        aria-label="Abrir WhatsApp"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    
+                    </a>
+
+                    <a class="btn-instagram-direct" 
+                        href="https://ig.me/m/mais.docesofc"
+                        aria-label="Abrir instagram"
+                        target="_blank" 
+                        rel="noopener noreferrer">
+                        
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a href="#" aria-label="Abrir Facebook">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- O QUE FAZ: mostra imagem principal da Home. 
+            ONDE APARECE: coluna direita da Home. 
+            QUANDO ATUA: renderização do banner. -->
+            <div id="banner">
+                <img src="src/images/books.png" class="hero-cake-image" alt="Imagem de bolo decorado">
+            </div>
+        
+        </section>
+        
+        <!-- O QUE FAZ: exibe prova social com avaliações de clientes. 
+        ONDE APARECE: seção intermediária após Home. 
+        QUANDO ATUA: renderização estática dos cards de feedback. -->
+        <section id="testimonials">
+            <img src="src/images/chef.png" id="testimonials_chef" alt="Imagem da chef">
+            <div id="testimonials_content">
+                <h2 class="section-title">Depoimentos</h2>
+                <h3 class="section-subtitle">
+                    O que os clientes falam sobre nós
+                </h3>
+
+                <div id="feedbacks">
+
+                    <div class="feedback">
+                        <img src="src/images/avatar2.png" class="feedback-avatar" alt="">
+                        
+                        <div class="feedback-content">
+                            <p>Mayane Nogueira
+                                <span>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    
+                                </span>
+                                
+                            </p>
+                            <p>
+                            O bolo que pedi me encantou, os doces estavam uma delícia. 
+                            Os ingredientes simples transformaram-se em momentos inesquecíveis. 
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="feedbacks">
+                    <div class="feedback">
+                        <img src="src/images/avatar2.png" class="feedback-avatar" alt="">
+                        
+                        <div class="feedback-content">
+                            <p>Luiza Mota
+                                <span>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </span>
+                                
+                            </p>
+                            <p>
+                            Amei tudo, mas principalmente os docinhos.
+                            Quero mais... 
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <a
+                    class="btn-default"
+                    href="#testimonials"
+                >
+                    Ver mais avaliações
+                </a>
+
+            </div>
+        </section>
+        
+        <!-- O QUE FAZ: apresenta os produtos principais em formato de cardápio. ONDE APARECE: seção final da página principal. QUANDO ATUA: renderização inicial, com adaptação responsiva. -->
+        <section id="menu">
+            <h2 class="section-title">Cardápio</h2>
+            <h3 class="section-subtitle">Nossos doces especiais</h3>
+
+            <div id="dishes">
+                <article class="dish">
+                    <div class="dish-heart">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+                    <img src="src/images/donutscolorido.png" class="dish-image dish-image-donuts" alt="Donuts coloridos">
+                    <h3 class="dish-title">Donuts artesanais</h3>
+                    <span class="dish-description">Massa leve e cobertura especial.</span>
+                    <div class="dish-rate">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <span>(500+)</span>
+                    </div>
+                    <div class="dish-price">
+                        <h4>R$25,00</h4>
+                        <button class="btn-default btn-icon" type="button" aria-label="Adicionar donuts ao carrinho">
+                            <i class="fa-solid fa-basket-shopping"></i>
+                        </button>
+                    </div>
+                </article>
+
+                <article class="dish">
+                    <div class="dish-heart">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+                    <img src="src/images/bolodecorado.png" class="dish-image dish-image-donuts" alt="Bolo decorado">
+                    <h3 class="dish-title">Bolo decorado</h3>
+                    <span class="dish-description">Perfeito para festas e datas especiais.</span>
+                    <div class="dish-rate">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <span>(500+)</span>
+                    </div>
+                    <div class="dish-price">
+                        <h4>R$175,00 / kg</h4>
+                        <button class="btn-default btn-icon" type="button" aria-label="Adicionar bolo ao carrinho">
+                            <i class="fa-solid fa-basket-shopping"></i>
+                        </button>
+                    </div>
+                </article>
+
+                <article class="dish">
+                    <div class="dish-heart">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+                    <img src="src/images/combodonuts.png" class="dish-image dish-image-donuts" alt="Combo de doces">
+                    <h3 class="dish-title">Combo de doces</h3>
+                    <span class="dish-description">Seleção dos doces mais pedidos da casa.</span>
+                    <div class="dish-rate">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <span>(500+)</span>
+                    </div>
+                    <div class="dish-price">
+                        <h4>R$20,00</h4>
+                        <button class="btn-default btn-icon" type="button" aria-label="Adicionar combo ao carrinho">
+                            <i class="fa-solid fa-basket-shopping"></i>
+                        </button>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <img src="src/images/wave.svg" alt="">
+        
+        <div id="footer_itens">
+            <span id="copyright">
+                &copy 2026 R.L.
+            </span>
+
+            <div class="social-media-buttons">
+                    <a href="#" aria-label="Abrir WhatsApp">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+
+                    <a href="#" aria-label="Abrir Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a href="#" aria-label="Abrir Facebook">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                </div>
+
+
+        </div>
+    
+    </footer>
+    
+    <!-- O QUE FAZ: carrega comportamento do menu mobile e item ativo. ONDE APARECE: interações da navegação. QUANDO ATUA: após carregamento da página. -->
+    <script src="src/javascripts/script.js/script.js"></script>
+</body>
+</html>

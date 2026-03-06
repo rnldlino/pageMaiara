@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('header.css');
+@import url('home.css');
+@import url('menu.css');
+@import url('testimonials.css');
+@import url('footer.css');
+
+:root {
+   --color-primary-1: #fff9ea;
+   --color-primary-2: #ffe8b4;
+   --color-primary-3: #f8d477;
+   --color-primary-4: #ffe100;
+   --color-primary-5: #ffcb45;
+   --color-primary-6: #e9a209;
+
+   --color-neutral-0: #fff;
+   --color-neutral-1: #1d1d1d;
+}
+/* O QUE FAZ: aplica reset global (fonte, margens, paddings e box model).
+   ONDE APARECE: em todos os elementos da página.
+   QUANDO ATUA: no carregamento inicial do CSS. */
+* {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+   scroll-behavior: smooth;
+}
+body {
+    /* O QUE FAZ: define a cor de fundo geral do site.
+       ONDE APARECE: corpo inteiro da página.
+       QUANDO ATUA: sempre. */
+    background-color: #fff9ea;
+}
+
+section {
+    /* O QUE FAZ: cria espaçamento padrão das seções.
+       ONDE APARECE: em cada <section> do site.
+       QUANDO ATUA: sempre que houver section. */
+    padding: 28px 8%;
+}
+
+/* O QUE FAZ: estilo base dos botões reutilizáveis (.btn-default).
+   ONDE APARECE: header, CTA e botão de telefone.
+   QUANDO ATUA: em todos os elementos com classe .btn-default. */
+.btn-default {
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffcb45;
+    /* Correção: como .btn-default também é usado em <a>,
+       definimos cor e removemos sublinhado para não ficar azul padrão de link */
+    color: #1d1d1d;
+    text-decoration: none;
+    border-radius: 12px;
+    /* O QUE FAZ: define área clicável interna do botão.
+       ONDE APARECE: botões com .btn-default.
+       QUANDO ATUA: sempre. */
+    padding: 10px 14px;
+    font-weight: 600;
+    /* O QUE FAZ: adiciona sombra leve para destacar o botão.
+       ONDE APARECE: botões com .btn-default.
+       QUANDO ATUA: sempre. */
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color .3s ease;
+}
+
+.btn-default:hover {
+    /* O QUE FAZ: muda a cor ao passar o mouse (hover).
+       ONDE APARECE: botões com .btn-default.
+       QUANDO ATUA: em interação de mouse no desktop. */
+    background-color: #f8d477;
+
+}
+
+/* O QUE FAZ: organiza os botões sociais em linha.
+   ONDE APARECE: bloco de redes sociais na Home.
+   QUANDO ATUA: sempre. */
+.social-media-buttons {
+    display: flex;
+    gap: 18px;
+}
+
+.social-media-buttons a {
+    /* O QUE FAZ: estilo de cada botão social individual.
+       ONDE APARECE: ícones WhatsApp/Instagram/Facebook.
+       QUANDO ATUA: sempre. */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 40px;
+    background-color: #fff;
+    font-size: 1.25rem;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #1d1d1d;
+    /* O QUE FAZ: adiciona sombra nos ícones sociais.
+       ONDE APARECE: em cada link social.
+       QUANDO ATUA: sempre. */
+    box-shadow: 0px 0px 12px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color .3s ease, color .3s ease;
+}
+
+.social-media-buttons a:hover {
+    /* O QUE FAZ: muda cor de fundo no hover dos ícones.
+       ONDE APARECE: botões sociais.
+       QUANDO ATUA: ao passar mouse sobre ícone social. */
+    background-color: #ffcb45;
+}
